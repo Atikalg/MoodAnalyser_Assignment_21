@@ -2,17 +2,23 @@ package com.bridgelab.moodAnalyser;
 
 public class MoodAnalyser {
     static String message;
-    //constructor
+
     public MoodAnalyser(String message) {
         this.message = message;
     }
-    //Method for mood analyse
+
     public static String analyseMood() {
-        if (message.equalsIgnoreCase("I am in sad mood"))
-            return "SAD";
-        else if (message.equalsIgnoreCase("I am in happy mood"))
-            return "HAPPY";
-        else
-            return "No Match";
+        String messageOne = "I am in Sad Mood";
+        String messageTwo = "I am in any Mood";
+        try {
+            if (message.equalsIgnoreCase(messageOne))
+                return "SAD";
+            else if (message.equalsIgnoreCase(messageTwo))
+                return "HAPPY";
+            else
+                return "No Match";
+        } catch (NullPointerException e) {
+            return"HAPPY(null)";
+        }
     }
 }
