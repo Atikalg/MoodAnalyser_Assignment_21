@@ -5,7 +5,7 @@ package com.bridgelab.moodAnalyser;
 * */
 public class MoodAnalyserMain {
     public static void main(String[] args) {
-        MoodAnalyser mood = new MoodAnalyser("I am in happy Mood");
+        MoodAnalyser mood = new MoodAnalyser(null);
         System.out.println(mood.analyseMood());
     }
 }
