@@ -4,14 +4,29 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class MoodAnalyserTest {
-    MoodAnalyser mood1 = new MoodAnalyser("I am in happy Mood");
-    MoodAnalyser mood2 = new MoodAnalyser("I am in sad Mood");
-
-    //True test case for mood analyser
     @Test
-    public void givenMessage_WhenProper_ShouldReturnHappy() {
-        String actual = mood1.analyseMood();
-        Assert.assertTrue("null", true);
+    public void given_SadMood_Should_Return_SAD() {
+        MoodAnalyserMain moodAnalyser = new MoodAnalyserMain("I am in Sad Mood");
+        String mood;
+        try {
+            Assert.assertSame("SAD", MoodAnalyser.Exception_Type.NULL);
+            System.out.println(moodAnalyser);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-    
+
+    @Test
+    public void given_AnyMood_Should_Return_HAPPY() {
+        MoodAnalyserMain moodAnalyser = new MoodAnalyserMain("I am in Happy Mood");
+        String mood;
+        try {
+            //mood = moodAnalyser.analyseMood();
+           Assert.assertSame("HAPPY", MoodAnalyser.Exception_Type.EMPTY);
+            System.out.println(moodAnalyser);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
