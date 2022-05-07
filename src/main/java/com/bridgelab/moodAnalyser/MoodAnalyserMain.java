@@ -4,8 +4,30 @@ package com.bridgelab.moodAnalyser;
 * Moode analyser program
 * */
 public class MoodAnalyserMain {
-    public static void main(String[] args) {
-        MoodAnalyser mood = new MoodAnalyser(null);
-        System.out.println(mood.analyseMood());
+    private static String message;
+    public MoodAnalyserMain() {
+    }
+
+    public MoodAnalyserMain(String message) {
+        this.message = message;
+    }
+    /**
+     * create a default constructor name as MoodAnalyserMain
+     */
+    public static void main(String[] args) throws MoodAnalyser{
+        try {
+            if (message.contains("Sad"))
+                System.out.println("SAD");
+            else
+                System.out.println("HAPPY");
+        }
+        catch (Exception e) {
+            if (message == null)
+                throw new MoodAnalyser("Please provide valid mood, dont provide null in arguments",
+                        MoodAnalyser.Exception_Type.NULL);
+            else
+                throw new MoodAnalyser("Please provide valid mood, dont keep empty in arguments",
+                        MoodAnalyser.Exception_Type.EMPTY);
+        }
     }
 }
